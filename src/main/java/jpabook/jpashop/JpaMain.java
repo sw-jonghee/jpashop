@@ -1,5 +1,7 @@
 package jpabook.jpashop;
 
+import jpabook.jpashop.domain.Item;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -19,6 +21,10 @@ public class JpaMain {
         tx.begin();
 
         try {
+
+            Item item = em.find(Item.class, 1l);
+
+
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
